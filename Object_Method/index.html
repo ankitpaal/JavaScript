@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object Method</title>
+</head>
+<body>
+  <script>
+    let user = {
+      name: "ankit6",
+      age: 30
+    };
+    user.sayHi = function(){
+      console.log("Hello!");
+    }
+    user.sayHi();
+
+    // Method shorthands 
+    user = {
+      sayHi: function(){
+        console.log("Hello Ankit");
+      }
+    }
+    user.sayHi();
+    user ={
+      sayHi(){
+        console.log("Ankki");
+      }
+    }
+    user.sayHi();
+
+    // this method
+    // to acces the obj , a method can use the this keyword
+
+    let user2 = {
+      name: "john",
+      age: 30,
+      sayHi(){
+        console.log(this.name);
+        console.log(this.age);
+      }
+    };
+    user2.sayHi();
+    function sayHi(){
+      console.log(this.age);
+
+    }
+    let user3 ={
+      name: "Ankit"  
+    };
+    let admin = {name: "Admin"};
+    function sayHi(){
+      console.log(this.name);
+    }
+    user3.f = sayHi;
+    admin.f = sayHi;
+    user3.f();
+    admin.f();
+    admin['f']();
+    
+  </script>
+</body>
+</html>
